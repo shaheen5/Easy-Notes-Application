@@ -9,6 +9,9 @@ app.use(express.urlencoded({extended: true}))
 //parse requests of content-type application/json
 app.use(express.json())
 
+// Require Notes routes
+require('./app/routes/note.routes.js')(app);
+
 //configuring the database
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
